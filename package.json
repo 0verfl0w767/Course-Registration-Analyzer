@@ -1,0 +1,14 @@
+{
+  "name": "desktop-viewer",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "Electron app to view filtered sugang data",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^28.2.3",
+    "node-fetch": "^2.7.0",
+    "xml-js": "^1.6.11"
+  }
+}
