@@ -2,7 +2,7 @@ const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const fs = require("fs");
 const { xml2json } = require("xml-js");
-const config = require("./config");
+const config = require("../config");
 
 const AREA_MAP = {
   "03": "사회과학영역",
@@ -23,7 +23,7 @@ function getStatus(limit, sugang) {
 
 async function getResponseAndConvert() {
   const requestXML = fs.readFileSync(
-    path.join(__dirname, config.api.requestXmlPath),
+    path.join(__dirname, "..", config.api.requestXmlPath),
     "utf-8",
   );
 
@@ -105,7 +105,7 @@ function createWindow() {
       contextIsolation: true,
     },
   });
-  win.loadFile("index.html");
+  win.loadFile(path.join(__dirname, "../public/index.html"));
 }
 
 app.whenReady().then(() => {
@@ -143,7 +143,7 @@ ipcMain.handle("get-all", async () => {
     const result = { time: getTimestamp(), data: allData };
     try {
       fs.writeFileSync(
-        path.join(__dirname, "all-data.json"),
+        path.join(__dirname, "../data/all-data.json"),
         JSON.stringify(result, null, 2),
         "utf-8",
       );

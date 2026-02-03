@@ -1,7 +1,7 @@
 {
   "name": "desktop-viewer",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "src/main.js",
   "description": "Electron app to view filtered sugang data",
   "scripts": {
     "start": "electron ."

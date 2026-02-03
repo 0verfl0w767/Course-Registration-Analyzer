@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>수강신청 조회</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>수강신청 조회</h1>
+    <div style="text-align: center; margin-top: 20px">
+      <button class="refresh" onclick="setFilter('all')">전체 보기</button>
+      <button class="refresh" onclick="setFilter('gyoyang')">
+        공통(교양)만 보기
+      </button>
+      <button class="refresh" onclick="setFilter('filtered')">
+        신청 가능만 보기
+      </button>
+      <button class="refresh" onclick="setFilter('cse')">
+        컴퓨터공학부만 보기
+      </button>
+      <button class="refresh" onclick="loadData()">새로고침</button>
+    </div>
+    <div
+      id="refresh-time"
+      style="text-align: center; color: #555; margin-bottom: 10px"
+    ></div>
+    <div style="width: 90%; margin: 0 auto 10px auto; text-align: right">
+      <button class="refresh" onclick="clearLog()" style="background: #888">
+        로그 초기화
+      </button>
+    </div>
+    <div id="log-container"></div>
+    <div id="table-container"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
